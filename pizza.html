@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<!-- Do some SEO here and such.... -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Space for any JavaScript and CSS linking -->
+
+<title>Syntekz Pizza</title>
+</head>	
+
+<body>
+<!-- Add in element ID and Classes as we go for CSS -->
+    <div>
+    	<h1>Syntekz Pizza Online Order System</h1>
+    	<form id="pizzaOrder" name="pizzaOrder">
+        	<Table>
+            	<tr>
+                	<td><label>First Name<br /><input name="fName" type="text" /></label></td>
+                    <td><label>Last Name<br /><input name="lName" type="text" /></label></td>
+                    <td><label>Phone<br /><input name="phone" type="text" maxlength="10" /></label></td>
+               	</tr>
+                
+                <tr>
+                	<td><label>Address<br /><input name="address" type="text" /></label></td>
+                    <td><label>City<br /><input name="city" type="text" /></label></td>
+                    <td><label>State<br /><input name="state" type="text" maxlength="2" /></label></td>
+                    <td><label>Zip Code<br /><input name="zip" type="text" maxlength="5" /></label></td>
+               	</tr>
+                <tr>
+                	<td><label>Name on Card<br /><input name="cName" type="text" /></label></td>
+                </tr>
+                <tr>
+                    <td><label>Card Number<br /><input name="cNumber" type="text" /></label></td>
+                </tr>
+                <tr>
+                	<td><label>CVM Number&nbsp; <a href="">[?]</a><br /><input name="cvm" type="text" size="3" maxlength="3" /></label></td>
+                </tr>
+                <tr>
+                    <td><label>Expiration Date<br /><select name="exMonth">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>&nbsp;
+                   	<select name="exYear">
+                          <option value="2011">2011</option>
+                          <option value="2012">2012</option>
+                          <option value="2013">2013</option>
+                          <option value="2014">2014</option>
+                          <option value="2015">2015</option>
+                          <option value="2016">2016</option>
+                          <option value="2017">2017</option>
+                          <option value="2018">2018</option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                   	</select></label></td>
+                </tr>
+                <tr>
+                	<td><label>Pizza Type<br /><select name="pizzaType">
+                	  <option value="1">Deep Dish</option>
+                	  <option value="2">Hand Tossed</option>
+                	  <option value="3">Thin</option>
+                	  <option value="4">Stuffed Crust</option>
+                	  <option value="5">Calzone</option>
+                	</select>
+                        </label>
+                  	</td>
+                    <td><label>Pizza Size<br /><select name="pizzaSize">
+                      <option value="1">Personal</option>
+                      <option value="2">Small</option>
+                      <option value="3">Medium</option>
+                      <option value="4">Large</option>
+                      <option value="5">Family</option>
+                    </select>
+                    	</label>
+                  	</td>
+             	</tr>
+                <tr>
+                	<td><label>Toppings</label><br />                	      
+                	        <label><input type="checkbox" name="toppings" value="1" id="toppings_1" />
+                	        Cheese</label><br />
+              	            <label><input type="checkbox" name="toppings" value="2" id="toppings_2" />
+                	        Pepperoni</label><br />
+                            <label><input type="checkbox" name="toppings" value="3" id="toppings_3" />
+                	        Sausage</label><br />
+                            <label><input type="checkbox" name="toppings" value="4" id="toppings_4" />
+                	        Hamburger</label><br />
+                            <label><input type="checkbox" name="toppings" value="5" id="toppings_5" />
+                	        Ham</label><br />
+                            <label><input type="checkbox" name="toppings" value="6" id="toppings_6" />
+                	        Bacon</label><br />
+                            <label><input type="checkbox" name="toppings" value="7" id="toppings_7" />
+                	        Chicken</label><br />
+                            <label><input type="checkbox" name="toppings" value="8" id="toppings_8" />
+                	        Anchovies</label><br />
+                            <label><input type="checkbox" name="toppings" value="9" id="toppings_9" />
+                	        Onions</label><br />
+                            <label><input type="checkbox" name="toppings" value="10" id="toppings_10" />
+                	        Green Peppers</label><br />
+                            <label><input type="checkbox" name="toppings" value="11" id="toppings_11" />
+                	        Mushrooms</label><br />
+                            <label><input type="checkbox" name="toppings" value="12" id="toppings_12" />
+                	        Jalapenos</label><br />
+                            <label><input type="checkbox" name="toppings" value="13" id="toppings_13" />
+                	        Pineapples</label><br />
+                            <label><input type="checkbox" name="toppings" value="14" id="toppings_14" />
+                	        Tomatoes</label><br />
+                            <label><input type="checkbox" name="toppings" value="15" id="toppings_15" />
+                	        Black Olives</label>
+                   	</td>
+               	</tr>
+                <tr>
+                	<td><input name="" type="submit" />&nbsp;<input name="" type="reset" /></td>
+              	</tr>
+            </Table>
+        </form>
+    </div>
+</body>
+</html>
