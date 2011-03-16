@@ -2,26 +2,38 @@
 
 session_start();
 
-$string = '';
+$width = 120;
+$height = 40;
+$length = 5;
+$baseList = '23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ';
+$code = "";
+$counter = 0;
 
-for ($i = 0; $i < 5; $i++) {
-	// this numbers refer to numbers of the ascii table (lower case)
-	$string .= chr(rand(97, 122));
+$image = @imagecreate($width, $height)
+or die('Cannot initialize captcha!');
+
+for ($i=0; $i<10; $i++){
+	imageline($image,mt_rand(0,$width), mt_rand(0,$height),
+		mt_rand(0,$width), mt_rand(0,$height),
+		imagecolorallocate($image,mt_rand(150,255),
+		mt_rand(150,255),
+		mt_rand(150,255)));
 }
 
-$_SESSION['rand_code'] = $string;
 
-$dir = 'fonts/';
+for ($i=0,$x=0;$i<$length;$i++){
+	$actChar = substr($baseList,rand(0,strlen($baseList)-1),1);
+	$x += 10 + mt_rand(0,10);
+	//imagechar($image,mt_rand(12,),$x,mt_rand(5,20), $actChar,imagecolorallocate($image,mt_rand(0,155), mt_rand(0,155), mt_rand(0,155)));
+	imagettftext($image,mt_rand(12,16),0,$x,mt_rand(5,20),imagecolorallocate($image,mt_rand(0,155), mt_rand(0,155), mt_rand(0,155)), 'fonts/' . 		 		rand(1,4) . '.ttf',$actChar);
+	$code .= strtolower($actChar);
+}
 
-$image = imagecreatetruecolor(170, 60);
-$black = imagecolorallocate($image, 0, 0, 0);
-$color = imagecolorallocate($image, 200, 100, 90); // red
-$white = imagecolorallocate($image, 255, 255, 255);
+header('Content-Type: Image/jpeg');
+imagejpeg($image);
+imagedestroy($image);
 
-imagefilledrectangle($image,0,0,399,99,$white);
-imagettftext ($image, 30, 0, 10, 40, $color, $dir."arial.ttf", $_SESSION['rand_code']);
+$_SESSION['securityCode'] = $code;
 
-header("Content-type: image/png");
-imagepng($image);
 
 ?>
